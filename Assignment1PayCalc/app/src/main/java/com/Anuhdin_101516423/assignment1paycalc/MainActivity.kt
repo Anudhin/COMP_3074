@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.max
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var etHours: EditText
@@ -36,10 +37,10 @@ class MainActivity : AppCompatActivity() {
         btnCalculate = findViewById(R.id.btnCalculate)
         btnAbout = findViewById(R.id.btnAbout)
 
-        // Calculate button
+
         btnCalculate.setOnClickListener { calculateAndShow() }
 
-        // About button
+
         btnAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
         }
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        // allow 0.13 or 13
+
         if (taxRate > 1.0) taxRate /= 100.0
 
         val baseHours = minOf(hours, 40.0)
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         val pay = baseHours * rate
         val overtimePay = overtimeHours * rate * 1.5
         val totalPay = pay + overtimePay
-        val tax = pay * taxRate  // per assignment spec, tax from base pay
+        val tax = pay * taxRate
 
         tvPay.text = "Pay: $${"%.2f".format(pay)}"
         tvOvertime.text = "Overtime Pay: $${"%.2f".format(overtimePay)}"

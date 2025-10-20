@@ -10,7 +10,6 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        // Show Up (back arrow) in the ActionBar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "About"
     }
@@ -18,7 +17,6 @@ class AboutActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                // Return to existing MainActivity (don’t create a new one)
                 NavUtils.navigateUpFromSameTask(this)
                 true
             }
