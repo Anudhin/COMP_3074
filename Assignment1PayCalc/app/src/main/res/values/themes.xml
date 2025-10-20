@@ -1,0 +1,7 @@
+<resources>
+    <!-- Keep an ActionBar, and make sure it does NOT overlay content -->
+    <style name="Theme.Assignment1PayCalc" parent="Theme.Material3.DayNight">
+        <item name="windowActionBar">true</item>
+        <item name="windowActionBarOverlay">false</item>
+    </style>
+</resources>
